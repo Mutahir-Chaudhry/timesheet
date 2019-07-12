@@ -24,3 +24,32 @@ var config = {
   var totalBilled = 0;
 
 
+  
+
+
+
+    
+ 
+  $("#add-user").on("click", function(event){
+      event.preventDefault();
+
+
+      employeeName =$("#employeeName-input").val().trim();
+      role =$("#role-input").val().trim();
+      startDate =$("#start-date").val().trim();
+      monthsWorked =$("#months-worked").val().trim();
+      monthlyRate =$("#monthly-rate").val().trim();
+      totalBilled =$("#total-billed").val().trim();
+      
+
+      database.ref().push({
+
+        employeeName: employeeName,
+        role: role,
+        startDate: startDate,
+        monthsWorked: monthsWorked,
+        monthlyRate: monthlyRate,
+        totalBilled: totalBilled,
+    })
+  })
+
